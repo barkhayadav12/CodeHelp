@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <div class="styleIndPost border">
+      <% if (locals.user) { %>
+      <div class="proInd">
+        <img src="<%= Post.createdBy.profileImg %>" /><%=
+        Post.createdBy.username %>
+      </div>
+      <h1><%= Post.title %></h1>
+      <div class="delBtn">
+        <pre><%= Post.createdBy.createdAt.toLocaleDateString() %></pre>
+        <% if (Post.createdBy._id.toString()==user._id.toString()) { %>
+        <form action="/post/<%= Post.id %>?_method=DELETE" method="POST">
+          <button type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="23"
+              height="23"
+              fill="currentColor"
+              class="bi bi-trash"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+              />
+              <path
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+              />
+            </svg>
+          </button>
+        </form>
+        <% } %>
+      </div>
+      <img src="<%= Post.coverImg %>" class="coverIndImg" />
+      <p class="postBody"><%= Post.body %></p>
+      <div class="mt-3">
+        <h1>Comments(<%= comment.length %>)</h1>
+        <% if (locals.user) { %>
+        <form action="/post/comment/<%= Post._id %>" method="post">
+          <div class="form-group addComment">
+            <input
+              type="text"
+              class="form-control"
+              id="comment"
+              name="content"
+              placeholder="Enter your comment.."
+            />
+            <button type="submit" class="btn btn-sm btn-primary">Add</button>
+          </div>
+        </form>
+        <div class="commentBox">
+          <% comment.forEach(comment => { %>
+          <div>
+            <div class="delBtn">
+              <div>
+                <img src="<%= comment.createdBy.profileImg %>" width="20px" />
+                <%= comment.createdBy.username %>
+              </div>
+              <div>
+                <% if (comment.createdBy._id.toString()==user._id.toString()) {
+                %>
+                <form
+                  action="/post/comment/<%= comment.id %>?_method=DELETE"
+                  method="POST"
+                >
+                  <button type="submit">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="23"
+                      height="23"
+                      fill="currentColor"
+                      class="bi bi-trash"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                      />
+                      <path
+                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                      />
+                    </svg>
+                  </button>
+                </form>
+                <% } %>
+              </div>
+            </div>
+            <div class="commentInd delBtn"><p><%= comment.content %></p></div>
+          </div>
+          <% }) %>
+        </div>
+        <% } %>
+      </div>
+      <% } %>
+    </div>
+    <%- include('./partials/scripts') %>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+body{
+    background: url('/Images/bg.jpeg');
+    color:white
+}
+.styleHome{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: column;
+    width:450px;
+    gap:30px;
+    @media (max-width:320px) {
+        width: 320px;
+    }
+}
+.styleHome p{
+    margin-top: 20px;
+    text-overflow: ellipsis;
+}
+.styleHome pre{
+    margin-top: -5px;
+}
+.bgImg{
+    width: 390px;
+    @media (max-width:320px) {
+        width: 270px;
+    }
+}
+.proImg{
+    border-radius: 50%;
+}
+.prCon{
+    margin-top: 10px;
+}
+.linkRead{
+    margin-left:80%;
+}
+.styleIndPost{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 520px;
+    border:1px solid gray;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding:10px;
+    @media (max-width:320px) {
+        width:320px;
+    }
+}
+.styleIndPost input{
+    width: 250px;
+    @media (max-width:320px) {
+        width:320px;
+    }
+}
+.proInd{
+    display: flex;
+    margin-top: 10px;
+    gap:10px;
+    align-items: center;
+}
+.postBody{
+    margin-top: 10px;
+}
+.proInd img{
+    border-radius: 50%;
+    height:50px;
+}
+#comment{
+    width: 440px;
+    @media (max-width:320px) {
+        width:320px;
+    }
+}
+.commentBox{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 7px;
+}
+.commentInd{
+    width: 480px;
+    margin-top: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2px;
+    @media (max-width:320px) {
+        width:290px;
+    }
+    
+}
+.commentBox img{
+    border-radius:50%;
+    width:30px;
+}
+.coverIndImg{
+    width:500px;
+    @media (max-width:320px) {
+        width:300px;
+    }
+}
+.addComment{
+    display: flex;
+    gap:7px;
+    margin-bottom: 10px;
+    padding:5px;
+}
+.delBtn{
+    display: flex;
+    justify-content: space-between;
+}
+.delBtn button{
+    border: none;
+    background-color: white;
+}
+.article{
+    display: flex;
+    width:100vw;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+}
+.intro{
+    height:250px;
+    display: flex;
+    margin-top: 90px;
+    flex-direction: column;
+    justify-content: center;
+    background: url('/public/Images/bg.jpeg');
+}
+.intro h4{
+    color:blueviolet;
+}
+.nameWeb{
+    color:blueviolet;
+}
+.contents{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentContainer{
+    display: flex;
+    border:1px solid white;
+    width:350px;
+    border-radius: 10px;
+    padding:10px;
+    @media (max-width:320px) {
+        width:310px;
+    }
+}

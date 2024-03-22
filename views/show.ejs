@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <% if (locals.user) { %>
+    <div class="styleIndPost border">
+        <h1 class="mb-1"><%=post.title%></article></h1>
+        <div class="mb-2"><%= post.createdAt.toLocaleDateString() %></div>
+        <p><%=post.description %></p>
+        <%- include('./partials/scripts') %>
+        <% } %> 
+    </body>
+  </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <div class="container styleHome">
+      <% if (locals.user) { %>
+    <% post.forEach(post=>{%>
+      <div class="card indCard">       
+      <div class="card-body">
+        <pre class="linkRead"><%= post.createdAt.toLocaleDateString() %></pre>
+        <h5 class="card-title"><%= post.title %></h5>
+        <a class="linkRead" href="/<%= post._id %>">Read...</a>
+      </div>
+    </div>
+    <%})%>
+  </div>
+  <% }%>
+    <%- include('./partials/scripts') %>
+  </body>
+</html>

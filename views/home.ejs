@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <div class="container styleHome">
+        <% if (locals.user) { %>
+      <% post.forEach(post=>{%>
+        <div class="card indCard">       
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <pre><%= post.createdAt.toLocaleDateString() %></pre>
+          <img src="<%=post.coverImg%>" class="bgImg" />
+          <a class="linkRead" href="/post/<%= post._id %>">Read...</a>
+        </div>
+      </div>
+      <%})%>
+    </div>
+    <% }else{%>
+        <div class="intro">
+            <h4>Welcome to CodeHelp!</h4>
+            <p>Read and write articles on programming, share your knowledge,and get help with your coding queries.</p>
+            <i>Join us to connect, learn, and grow in the world of coding.</i>
+        </div>
+    <%}%>
+    <%- include('./partials/scripts') %>
+  </body>
+</html>
