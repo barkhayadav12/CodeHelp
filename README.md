@@ -3,6 +3,7 @@
 <p align="center">
   <h3 align="center">CodeHelp</h3>
 
+[Project Overview](https://www.youtube.com/watch?v=EwVVc9ikJOY)
 
 ## About The Project
 
@@ -21,5 +22,3 @@ CodeHelp is a hub for coding enthusiasts where the users can read and write arti
 
 Ejs,Bootstrap,Node.js,Express.js,MongoDB
 
-# Overview
-<img width="960" alt="Screenshot 2024-01-29 104236" src="https://github.com/barkhayadav12/CodeHelp_CodingHelp/assets/143165059/6d787d7e-7691-4e8b-bf82-53e00ef3cc8f">
