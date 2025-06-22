@@ -3,7 +3,7 @@
 <p align="center">
   <h3 align="center">CodeHelp</h3>
 
-[Project Overview](https://www.youtube.com/watch?v=EwVVc9ikJOY)
+[Youtube Project Overview](https://www.youtube.com/watch?v=EwVVc9ikJOY)
 
 ## About The Project
 
